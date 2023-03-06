@@ -1,0 +1,40 @@
+Este documento detalha cada configuração realizado neste arquivo
+
+pref("extensions.pocket.enabled", false);
+#Desativa a extensão Pocket do Firefox
+
+lockPref("trailhead.firstrun.branches", "nofirstrun-empty");
+#Desativa a tela de boas-vindas do Firefox
+
+lockPref("browser.aboutwelcome.enabled", false);
+#Desativa a tela de boas-vindas do Firefox
+
+pref("datareporting.policy.dataSubmissionEnabled", false);
+#Desativa o envio de dados de uso para a Mozilla
+
+pref("browser.shell.checkDefaultBrowser", false);
+#Desativa a verificação se o Firefox é o navegador padrão
+
+pref("pdfjs.disabled", true);
+#Desativa o uso do PDF.js, o visualizador de PDF integrado do Firefox
+
+pref("browser.search.hiddenOneOffs", "Bing,Yahoo,Amazon.com,DuckDuckGo,MercadoLivre,Wikipedia (pt)");
+#Oculta os mecanismos de pesquisa(Bing, Yahoo, Amazon.com, DuckDuckGo, MercadoLivre e Wikipedia (pt))
+
+pref("datareporting.healthreport.uploadEnabled", false);
+#Desativa o envio de dados para a Mozilla
+
+pref("app.shield.optoutstudies.enabled", false);
+#Desativa a participação em estudos do Firefox Shield
+
+pref("extensions.htmlaboutaddons.discover.enabled", false);
+#Desativa a opção de descobrir novos add-ons na página "sobre add-ons" do Firefox
+
+pref("extensions.htmlaboutaddons.recommendations.enabled", false);
+#Desativa as recomendações de add-ons na página "sobre add-ons" do Firefox
+
+pref("browser.messaging-system.whatsNewPanel.enabled", false);
+#Desativa o painel de novidades na barra de tarefas do Firefox
+
+pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+#Desativa a seção "top stories" na nova aba do Firefox.

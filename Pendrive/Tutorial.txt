@@ -1,0 +1,30 @@
+Este documento explica como preparar o pendrive para formatação dos computadores.
+Suporte a partições GPT E MBR/UEFI e Legacy no mesmo pendrive
+Instalar o tema personalizado no ventoy
+Utilizar plugins de auto-formatação
+
+================================= Instalação do Ventoy ====================================
+Passo 1:
+Abra o "Ventoy2Disk.exe" e selecione o seu pendrive em "Device"
+
+Passo 2:
+Clique em "Options" e selecione as opções: 
+Secure Boot Support
+GPT em Partition Style
+Em "Partitions Configuration" deixe como padrão.
+
+Passo 3:
+Após os ajustes clique em "Install" e digite "YES" para confirmar. Digite tudo em Maiusculo.
+Todos os dados do pendrive serão apagados e não poderão ser recuperados.
+Clique em "OK" nos proximos dois avisos que irão aparecer.
+Um aviso será exibido dizendo que o ventoy foi instalado com exito.
+
+
+
+==================================== Instalar Tema =========================================
+Copie a pasta "ventoy" em "Configuração Ventoy" para a raiz do pendrive onde o ventoy foi instalado.
+
+
+
+=============================================================================================
+
