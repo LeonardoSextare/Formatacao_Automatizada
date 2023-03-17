@@ -1,0 +1,1 @@
+pyinstaller --noconfirm --onefile --console --icon "C:/Users/Leonardo Sextare/Documents/GitHub/Formatacao_Automatizada/!Programa - Python/AutoFormat.ico" --name "Auto Format" --uac-admin  "C:/Users/Leonardo Sextare/Documents/GitHub/Formatacao_Automatizada/!Programa - Python/principal.py"
