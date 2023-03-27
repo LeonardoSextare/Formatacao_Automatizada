@@ -1,5 +1,4 @@
-('C:\\Users\\Leonardo '
- 'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+('C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
  'Codigo\\build\\Auto Format\\PYZ-00.pyz',
  [('_compat_pickle',
    'C:\\Users\\Leonardo '
@@ -162,9 +161,8 @@
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\utils.py',
    'PYMODULE'),
   ('extensions',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - '
-   'Python\\extensions.py',
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+   'Code\\extensions.py',
    'PYMODULE'),
   ('fractions',
    'C:\\Users\\Leonardo '
@@ -175,9 +173,8 @@
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ftplib.py',
    'PYMODULE'),
   ('functions',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - '
-   'Python\\functions.py',
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+   'Code\\functions.py',
    'PYMODULE'),
   ('getopt',
    'C:\\Users\\Leonardo '
@@ -342,6 +339,10 @@
   ('pprint',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('programs',
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+   'Code\\programs.py',
    'PYMODULE'),
   ('py_compile',
    'C:\\Users\\Leonardo '

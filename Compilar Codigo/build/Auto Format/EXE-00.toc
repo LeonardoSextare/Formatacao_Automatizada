@@ -1,12 +1,10 @@
-('C:\\Users\\Leonardo '
- 'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
- 'Codigo\\dist\\Auto Format.exe',
+('C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
+ 'Codigo\\Auto Format.exe',
  True,
  False,
  False,
- ['C:\\Users\\Leonardo '
-  'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - '
-  'Python\\AutoFormat.ico'],
+ ['C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
+  'Codigo\\AutoFormat.ico'],
  None,
  True,
  False,
@@ -17,37 +15,30 @@
  None,
  None,
  None,
- 'C:\\Users\\Leonardo '
- 'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+ 'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
  'Codigo\\build\\Auto Format\\Auto Format.pkg',
  [('PYZ-00.pyz',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
    'Codigo\\build\\Auto Format\\PYZ-00.pyz',
    'PYZ'),
   ('struct',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
    'Codigo\\build\\Auto Format\\localpycs\\struct.pyc',
    'PYMODULE'),
   ('pyimod01_archive',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
    'Codigo\\build\\Auto Format\\localpycs\\pyimod01_archive.pyc',
    'PYMODULE'),
   ('pyimod02_importers',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
    'Codigo\\build\\Auto Format\\localpycs\\pyimod02_importers.pyc',
    'PYMODULE'),
   ('pyimod03_ctypes',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
    'Codigo\\build\\Auto Format\\localpycs\\pyimod03_ctypes.pyc',
    'PYMODULE'),
   ('pyimod04_pywin32',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
    'Codigo\\build\\Auto Format\\localpycs\\pyimod04_pywin32.pyc',
    'PYMODULE'),
   ('pyiboot01_bootstrap',
@@ -59,9 +50,8 @@
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
    'PYSOURCE'),
   ('principal',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - '
-   'Python\\principal.py',
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+   'Code\\principal.py',
    'PYSOURCE'),
   ('VCRUNTIME140.dll',
    'C:\\Users\\Leonardo '
@@ -95,13 +85,13 @@
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_socket.pyd',
    'EXTENSION'),
-  ('_ssl.pyd',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_ssl.pyd',
-   'EXTENSION'),
   ('unicodedata.pyd',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_ssl.pyd',
    'EXTENSION'),
   ('libcrypto-1_1.dll',
    'C:\\Users\\Leonardo '
@@ -112,14 +102,13 @@
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\libssl-1_1.dll',
    'BINARY'),
   ('base_library.zip',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
    'Codigo\\build\\Auto Format\\base_library.zip',
    'DATA')],
  [],
  False,
  False,
- 1678973306,
+ 1679930476,
  [('run.exe',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',

@@ -1,8 +1,6 @@
-(['C:\\Users\\Leonardo '
-  'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - '
-  'Python\\principal.py'],
- ['C:\\Users\\Leonardo '
-  'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - Python'],
+(['C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+  'Code\\principal.py'],
+ ['C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source Code'],
  ['codecs'],
  ['C:\\Users\\Leonardo '
   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks',
@@ -13,9 +11,7 @@
   'C:\\Users\\Leonardo '
   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\rthooks\\__pycache__',
   'C:\\Users\\Leonardo '
-  'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks',
-  'C:\\Users\\Leonardo '
-  'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pygame\\__pyinstaller'],
+  'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks'],
  {},
  [],
  [],
@@ -23,16 +19,15 @@
  False,
  False,
  {},
- '3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) [MSC v.1934 64 bit '
+ '3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit '
  '(AMD64)]',
  [('pyi_rth_inspect',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
    'PYSOURCE'),
   ('principal',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - '
-   'Python\\principal.py',
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+   'Code\\principal.py',
    'PYSOURCE')],
  [('inspect',
    'C:\\Users\\Leonardo '
@@ -386,6 +381,22 @@
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ast.py',
    'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\signal.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
+   'PYMODULE'),
   ('nturl2path',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\nturl2path.py',
@@ -426,35 +437,21 @@
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_py_abc.py',
    'PYMODULE'),
-  ('subprocess',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py',
-   'PYMODULE'),
-  ('signal',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\signal.py',
-   'PYMODULE'),
-  ('stringprep',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
-   'PYMODULE'),
-  ('tracemalloc',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
-   'PYMODULE'),
   ('getpass',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\getpass.py',
    'PYMODULE'),
+  ('programs',
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+   'Code\\programs.py',
+   'PYMODULE'),
   ('extensions',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - '
-   'Python\\extensions.py',
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+   'Code\\extensions.py',
    'PYMODULE'),
   ('functions',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - '
-   'Python\\functions.py',
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
+   'Code\\functions.py',
    'PYMODULE'),
   ('platform',
    'C:\\Users\\Leonardo '
@@ -492,13 +489,13 @@
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_socket.pyd',
    'EXTENSION'),
-  ('_ssl.pyd',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_ssl.pyd',
-   'EXTENSION'),
   ('unicodedata.pyd',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_ssl.pyd',
    'EXTENSION'),
   ('libcrypto-1_1.dll',
    'C:\\Users\\Leonardo '
@@ -511,8 +508,7 @@
  [],
  [],
  [('base_library.zip',
-   'C:\\Users\\Leonardo '
-   'Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\Compilar '
+   'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar '
    'Codigo\\build\\Auto Format\\base_library.zip',
    'DATA')],
  [])

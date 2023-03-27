@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['C:/Users/Leonardo Sextare/Documents/GitHub/Formatacao_Automatizada/!Programa - Python/principal.py'],
+    ['C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source Code\\principal.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -42,5 +42,5 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     uac_admin=True,
-    icon=['C:\\Users\\Leonardo Sextare\\Documents\\GitHub\\Formatacao_Automatizada\\!Programa - Python\\AutoFormat.ico'],
+    icon=['C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Compilar Codigo\\AutoFormat.ico'],
 )
