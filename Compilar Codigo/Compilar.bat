@@ -7,5 +7,3 @@ pyinstaller --noconfirm --onefile --console --icon "C:\Users\Leonardo Sextare\De
 timeout /t 1
 
 move "./Auto Format.exe" "C:\Users\Leonardo Sextare\Documents\Ferramentas TI\!Pendrive\!!Pos Formatacao"
-
-pause

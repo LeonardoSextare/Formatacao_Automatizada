@@ -381,22 +381,6 @@
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ast.py',
    'PYMODULE'),
-  ('subprocess',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py',
-   'PYMODULE'),
-  ('signal',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\signal.py',
-   'PYMODULE'),
-  ('stringprep',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
-   'PYMODULE'),
-  ('tracemalloc',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
-   'PYMODULE'),
   ('nturl2path',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\nturl2path.py',
@@ -433,9 +417,25 @@
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\client.py',
    'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\signal.py',
+   'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
    'PYMODULE'),
   ('getpass',
    'C:\\Users\\Leonardo '
@@ -457,13 +457,13 @@
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\platform.py',
    'PYMODULE')],
- [('VCRUNTIME140.dll',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140.dll',
-   'BINARY'),
-  ('python311.dll',
+ [('python311.dll',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\python311.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140.dll',
    'BINARY'),
   ('_decimal.pyd',
    'C:\\Users\\Leonardo '

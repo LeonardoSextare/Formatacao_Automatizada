@@ -1,5 +1,46 @@
 from platform import version, system, architecture
 from time import sleep
+from subprocess import run
+
+
+def initializeProgram(folder: int, name: str, arguments: list[str], subFolder: str=None,msi=False):
+    """
+    Executa um programa a partir do caminho e do nome especificado.
+
+    Args:
+        folder (int): O índice da pasta onde o programa está localizado.
+        name (str): O nome do arquivo .exe que será executado.
+        arguments (List[str]): Uma lista de argumentos que serão passados ​​para o programa.
+        msi (bool): Se True, o arquivo é um MSI e deve ser executado com msiexec.exe. Defa
+        ult é False.
+
+    Returns:
+        None
+
+    """
+    dir = ['0_Drivers','1_Complementos','2_Programas', '3_Configuracoes', '4_Ativacao', '5_Finalizacao']
+
+    if subFolder != None:
+        programPath = f'{dir[folder]}\\{subFolder}\\{name}.exe'
+    else:
+        programPath = f'{dir[folder]}\\{name}.exe'
+
+    
+    command = [programPath, *arguments]
+    
+    print(f'Instalando {name}...')
+    try:
+        install = run(command)
+    except FileNotFoundError:
+        print('ERRO! Arquivo não encontrado!')
+    except Exception as error:
+        print(error.__class__)
+    else:
+        if install.returncode != 0:
+            print(f'Erro ao instalar {name}')
+            print(install.returncode)
+        else:
+            print(f'{name} instalado com sucesso!\n')
 
 
 def titulo(msg, tam=60):

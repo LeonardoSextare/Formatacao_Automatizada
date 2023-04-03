@@ -6,29 +6,19 @@ def installDotNet35(version):
         return print('Sistema incompativel, instalação ignorada!')
     
     print('Instalando Net Framework 3.5...')
-    arguments = ['DISM', '/Online', '/Enable-Feature', '/FeatureName:NetFx3', '/All',
+    command = ['DISM', '/Online', '/Enable-Feature', '/FeatureName:NetFx3', '/All',
                '/LimitAccess', f'/Source:1_Complementos\\.NetFramework_3.5\\{version}', '/NoRestart']
 
-    command = run(arguments)
-    if command.returncode != 0:
-        print('Erro ao Instalar Net Framework 3.5')
-        print(command.returncode)
+    try:
+        install = run(command)
+    except Exception as error:
+        print(error.__class__)
     else:
-        print('Net Framework 3.5 Instalado com Sucesso!\n')
-
-
-def installDotNet7():
-    print('Instalando .Net 7')
-    programPath = '1_Complementos\\.Net_7.0.4_Runtime.exe'
-    arguments = [programPath, '/s']
-
-    command = run(arguments)
-
-    if command.returncode != 0:
-        print('Erro ao instalar .Net 7')
-        print(command.returncode)
-    else:
-        print('.Net 7 instalado com sucesso!\n')
+        if install.returncode != 0:
+            print('Erro ao Instalar Net Framework 3.5')
+            print(install.returncode)
+        else:
+            print('Net Framework 3.5 Instalado com Sucesso!\n')
 
 
 def installJava():
@@ -76,15 +66,30 @@ def installCRuntime():
         for c in (errorList):
             print(c)
 
-def installDirectX():
-    print('Instalando DirectX...')
-    programPath = '1_Complementos\\DirectX\\DXSETUP.exe'
-    arguments = [programPath, '/silent']
+
+# def installDirectX():
+#     print('Instalando DirectX...')
+#     programPath = '1_Complementos\\DirectX\\DXSETUP.exe'
+#     arguments = [programPath, '/silent']
     
-    command = run(arguments)
+#     command = run(arguments)
     
-    if command.returncode != 0:
-        print('Erro ao instalar DirectX')
-        print(command.returncode)
-    else:
-        print('DirectX instalado com sucesso!\n')
+#     if command.returncode != 0:
+#         print('Erro ao instalar DirectX')
+#         print(command.returncode)
+#     else:
+#         print('DirectX instalado com sucesso!\n')
+
+
+# def installDotNet7():
+#     print('Instalando .Net 7')
+#     programPath = '1_Complementos\\.Net_7.0.4_Runtime.exe'
+#     arguments = [programPath, '/s']
+
+#     command = run(arguments)
+
+#     if command.returncode != 0:
+#         print('Erro ao instalar .Net 7')
+#         print(command.returncode)
+#     else:
+#         print('.Net 7 instalado com sucesso!\n')

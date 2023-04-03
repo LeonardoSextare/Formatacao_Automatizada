@@ -53,13 +53,13 @@
    'C:\\Users\\Leonardo Sextare\\Desktop\\Formatacao_Automatizada\\Source '
    'Code\\principal.py',
    'PYSOURCE'),
-  ('VCRUNTIME140.dll',
-   'C:\\Users\\Leonardo '
-   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140.dll',
-   'BINARY'),
   ('python311.dll',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\python311.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\Leonardo '
+   'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140.dll',
    'BINARY'),
   ('_decimal.pyd',
    'C:\\Users\\Leonardo '
@@ -108,7 +108,7 @@
  [],
  False,
  False,
- 1679930476,
+ 1680483696,
  [('run.exe',
    'C:\\Users\\Leonardo '
    'Sextare\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
