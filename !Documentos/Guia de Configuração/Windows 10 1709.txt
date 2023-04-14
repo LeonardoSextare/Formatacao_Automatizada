@@ -1,0 +1,56 @@
+Configurações Windows 10 1709
+
+# Desabilitar Reparo Automatico
+	bcdedit /set {default} recoveryenabled no
+
+# Desabilitar Aplicativos em Segundo Plano
+	HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications GlobalUserDisabled  REG_DWORD  1 
+
+# Exibir "Este Computador" ao abrir o explorer:
+	HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced LaunchTo REG_DWORD 1
+
+# Ocultar Visão de Tarefas
+	HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced ShowTaskViewButton REG_DWORD 0
+
+# Ocultar Pessoas
+	HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People PeopleBand REG_DWORD 0
+
+# Desativar busca na Web no Menu Iniciar
+	HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search DisableWebSearch REG_DWORD 1
+	HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search BingSearchEnabled REG_DWORD 0
+
+# Icone Barra de Pesquisa
+	HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search SearchboxTaskbarMode REG_DWORD 1
+
+# Aparencia e Desempenho
+	# Desativar Transparencia
+		HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize EnableTransparency REG_DWORD 0
+
+	# Ajustar Desempenho e Aparencia
+		HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects VisualFXSetting REG_DWORD 3 
+		HKEY_CURRENT_USER\Control Panel\Desktop UserPreferencesMask REG_BINARY 9012038010000000
+		HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced TaskbarAnimations REG_DWORD 0
+		HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics MinAnimate REG_SZ 0
+		HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\DWM EnableAeroPeek REG_DWORD 0
+		HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced ListviewAlphaSelect REG_DWORD 0
+		HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\DWM AlwaysHibernateThumbnails REG_DWORD 0
+
+# Privacidade e Segurança
+
+	# Desabilitar Teletria
+		HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection AllowTelemetry REG_DWORD 0
+		HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection MaxTelemetryAllowed REG_DWORD 0
+		HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection AllowTelemetry REG_DWORD 0
+		HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection AllowTelemetry REG_DWORD 0
+		HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection MaxTelemetryAllowed REG_DWORD 0
+
+	# Desabilitar Wifi Reporting e Auto-Connect em Hotspots Publicos
+		HKLM\SOFTWARE\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting Value REG_DWORD 0
+		HKLM\SOFTWARE\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots Value REG_DWORD 0 
+
+# Desabilitar Xbox Game Bar
+	HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR AppCaptureEnabled REG_DWORD 0
+	HKEY_CURRENT_USER\System\GameConfigStore GameDVR_Enabled REG_DWORD 0
+	HKEY_CURRENT_USER\System\GameConfigStore GameDVR_FSEBehavior REG_DWORD 0
+	
+

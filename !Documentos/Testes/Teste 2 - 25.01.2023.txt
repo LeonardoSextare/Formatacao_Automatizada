@@ -1,0 +1,26 @@
+Versão: 0.1
+25.01.2023 
+Video: NA
+
+Notebook Asus
+CPU: i3 - 4030U
+RAM: 4GB DDR3
+VGA: Onboard
+SSD: 240GB Kingston
+USB 3.0
+
+Windows 10 21H2
+
+Tempo Total (Modo Compatibilidade):
+15 Minutos
+
+Bugs Inesperados:
+Aparentemente nenhum
+
+Observações
+Executado direto do pendrive.
+Google Chrome erro ao instalar 1619 (Instalador sumiu)
+Wallpaper Desktop não foi trocado.
+Após uma demora muito grande para conectar a internet precisou pressionar uma tecla para progessguir.
+
+O restante aparentemente tudo OK
