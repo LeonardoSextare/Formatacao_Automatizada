@@ -6,4 +6,4 @@ Projeto escrito em Python com instuito de desenvolver uma ferramenta capaz de co
 
 ## ⚠ Observações
 Para que o programa funcione corretamente é necessario a pasta com todos os programas e suas dependecias na mesma pasta onde o programa está executando.
-Por questões de limites do GitHub e outros fatores não posso dispobilizar os programas por aqui.
+Por questões de limitação de tamanho dos arquivo no GitHub e outros fatores não posso dispobilizar os programas por aqui.
