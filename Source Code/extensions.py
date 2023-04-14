@@ -1,5 +1,5 @@
 from subprocess import run
-
+from functions import *
 
 def install_DotNet35(version):
     if not version:

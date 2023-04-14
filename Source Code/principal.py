@@ -2,11 +2,6 @@ from functions import *
 from extensions import *
 from programs import *
 from systemConfig import *
-from getpass import getpass
-
-# senha = getpass('Senha: \n')
-# if senha != 'palmeirasrocha1':
-#     exit()
 
 print(titulo('Auto Formatação by: Sextare'))
 
@@ -25,7 +20,7 @@ else:
 ofcVersion = officeSelection()
 
 # Defines if windows will be activated
-winActivate = activateWindows()
+# winActivate = activateWindows()
 
 
 print(titulo('Instalando Complementos'))
@@ -46,11 +41,11 @@ installAnydesk()
 initializeProgram(2, 'Winrar', ['/S'])
 installAdobe()
 
-print(titulo('Configurando o Sistema'))
-if WIN_VERSION == '1709':
-    configWindows1709()
-else:
-    print('Sistema Incopativel, etapa ignorada')
+# print(titulo('Configurando o Sistema'))
+# if WIN_VERSION == '1709':
+#     configWindows1709()
+# else:
+#     print('Sistema Incopativel, etapa ignorada')
 
 
 input('Pressione enter para sair...')

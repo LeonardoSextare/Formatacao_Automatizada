@@ -22,10 +22,6 @@ def start_executable(name: str, exe_path: str, arguments: list[str], msg=False):
             print(f'{name} Instalado com sucesso!')
 
 
-start_executable('teste',
-                 'C:\\Users\\Leonardo Sextare\\Documents\\Ferramentas TI\\!Pendrive\\!!Pos Formatacao\\2_Programas\\Firefox.msi', [], msg=True)
-
-
 def start_msi():
     ...
 
