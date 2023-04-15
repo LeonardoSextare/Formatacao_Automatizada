@@ -3,23 +3,39 @@ from subprocess import *
 
 
 def start_executable(name: str, exe_path: str, arguments: list[str], msg=False):
-    print(name, exe_path, arguments)
+    """
+    Executes an external program with the specified arguments.
+
+    Args:
+        name: The name of the program being executed.
+        exe_path: The full path to the executable file of the program.
+        arguments: A list of strings containing the arguments that will be passed to the program.
+        msg (optional): If true, displays messages on the screen reporting the progress of the program execution. 
+    
+    Example:
+        >>> start_executable('My Program', '/path/to/program.exe', ['arg1', 'arg2'], True)
+    """
     command = [exe_path, *arguments]
 
     if msg:
         print(f'Instalando {name}...')
 
     try:
-        executable = run(command)
-    except CalledProcessError as error:
-        print(f'ERRO! Erro durante a execução do comando.\nCodigo:{error}')
+        run(command, check=True)
     except FileNotFoundError:
-        print(f'ERRO! Arquivo não encontrado')
+        print(f'ERRO! Arquivo não encontrado\n')
+
+    except CalledProcessError as error:
+        print(f'ERRO! Erro durante a execução do comando.\nCodigo:{error.returncode}\n')
+    
     except Exception as error:
-        print(f'ERRO desconhecido! {error.__class__}')
+        print(f'ERRO desconhecido! {error.__class__}\n')
+    
     else:
         if msg:
-            print(f'{name} Instalado com sucesso!')
+            print(f'{name} Instalado com sucesso!\n')
+        
+        return 0
 
 
 def start_msi():
