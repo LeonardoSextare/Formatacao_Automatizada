@@ -27,8 +27,7 @@ print(titulo('Instalando Complementos'))
 install_DotNet35(WIN_VERSION)
 install_CRuntime()
 install_dotNet7()
-initializeProgram(1, 'Java_Runtime', [
-                   '/qn', 'AUTO_UPDATE=Disable', 'NOSTARTMENU=Enable'], msi=True)
+install_JavaRuntime()
 install_DirectX()
 
 

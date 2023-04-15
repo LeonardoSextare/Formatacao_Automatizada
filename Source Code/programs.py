@@ -3,38 +3,37 @@ from functions import *
 
 
 def installChrome():
-    initializeProgram(2, 'Google Chrome', [
-                      '/qn'], msi=True, subFolder='Google Chrome')
-    run(['2_Programas\\Google Chrome\\SetDefaultBrowser.exe', 'chrome'])
+    success = program_install('Google Chrome', '2_Programas\\Google Chrome\\Google Chrome.msi',
+                              ['/qn'], msg=True, msi=True)
+    if success:
+        set_Default = program_install(
+            'Navegador', '2_Programas\\Google Chrome\\SetDefaultBrowser.exe', ['chrome'])
+        if set_Default:
+            print('Google Chrome definido como navegador padrão!\n')
 
 
 def installFirefox():
-    initializeProgram(2, 'Firefox', ['/qn'], msi=True)
+    program_install('Firefox', '2_Programas\\Firefox.msi',
+                    ['/qn'], msg=True, msi=True)
 
 
 def install_Anydesk():
-    start_executable('Anydesk', '2_Programas\\AnyDesk.exe',
-                     ['--install', 'C:\\Program Files (x86)\\AnyDesk', '--silent', '--create-desktop-icon'], msg=True)
-
-
-def installTeamviewer():
-    run(['2_Programas\\EdgeWebview.exe', '/silent', '/install'])
-    initializeProgram(2, 'TeamViewer', ['/S'])
+    program_install('Anydesk', '2_Programas\\AnyDesk.exe',
+                    ['--install', 'C:\\Program Files (x86)\\AnyDesk', '--silent', '--create-desktop-icon'], msg=True)
 
 
 def install_Adobe():
-    start_executable(
+    success = program_install(
         'Adobe Reader', '2_Programas\\Adobe Reader\\Adobe Reader.exe', [], msg=True)
-
-    print('Definindo como leitor de PDF padrão...')
-    set_Default = start_executable('Leitor', '2_Programas\\Adobe Reader\\SetUserFTA.exe',
-                                   ['.pdf', 'AcroExch.Document.DC'])
-    if set_Default == 0:
-        print('Adobe Reader definido como leitor padrão!')
+    if success:
+        set_Default = program_install('Leitor', '2_Programas\\Adobe Reader\\SetUserFTA.exe',
+                                      ['.pdf', 'AcroExch.Document.DC'])
+        if set_Default:
+            print('Adobe Reader definido como leitor padrão!\n')
 
 
 def install_Winrar():
-    start_executable('Winrar', '2_Programas\\Winrar.exe', ['/S'], msg=True)
+    program_install('Winrar', '2_Programas\\Winrar.exe', ['/S'], msg=True)
 
 
 def installOffice(version):
@@ -51,3 +50,8 @@ def installOffice(version):
         print(command.returncode)
     else:
         print(f'Office {version} instalado com sucesso!\n')
+
+
+def install_JavaRuntime():
+    program_install('Java 8', '1_Complementos\\Java_Runtime.msi',
+                    ['/qn', 'AUTO_UPDATE=Disable', 'NOSTARTMENU=Enable'], msg=True, msi=True)

@@ -2,87 +2,47 @@ from platform import version, system, architecture
 from subprocess import *
 
 
-def start_executable(name: str, exe_path: str, arguments: list[str], msg=False):
+def program_install(name: str, path: str, arguments: list[str], msg=False, msi=False):
     """
-    Executes an external program with the specified arguments.
+    Installs a program from an executable or msi file.
 
     Args:
-        name: The name of the program being executed.
-        exe_path: The full path to the executable file of the program.
-        arguments: A list of strings containing the arguments that will be passed to the program.
-        msg (optional): If true, displays messages on the screen reporting the progress of the program execution. 
-    
-    Example:
-        >>> start_executable('My Program', '/path/to/program.exe', ['arg1', 'arg2'], True)
+        name: The name of the program to be installed.
+        path: The path to the file of the program.
+        arguments: A list of optional arguments to execute during installation.
+        msg: If True, displays progress messages.
+        msi: If True, runs the file as a Microsoft Installer package.
+
+    Returns:
+        int: Returns 1 if the installation was successful. Otherwise, returns None.
+    >>> program_install('Program Name', 'path\\program.msi', ['/qn'], msg=True, msi=True)
     """
-    command = [exe_path, *arguments]
+    command = [path, *arguments]
+    if msi:
+        command.insert(0, 'msiexec.exe')
+        command.insert(1, '/i')
 
     if msg:
         print(f'Instalando {name}...')
 
     try:
         run(command, check=True)
+
     except FileNotFoundError:
         print(f'ERRO! Arquivo não encontrado\n')
 
     except CalledProcessError as error:
-        print(f'ERRO! Erro durante a execução do comando.\nCodigo:{error.returncode}\n')
-    
+        print(
+            f'ERRO! Falha na execução do comando.\nCodigo:{error.returncode}\n')
+
     except Exception as error:
-        print(f'ERRO desconhecido! {error.__class__}\n')
-    
+        print(f'ERRO desconhecido! Tipo:{error.__class__}')
+
     else:
         if msg:
             print(f'{name} Instalado com sucesso!\n')
-        
-        return 0
 
-
-def start_msi():
-    ...
-
-
-def initializeProgram(folder: int, name: str, arguments: list[str], subFolder: str = None, msi=False):
-    """
-    Executa um programa a partir do caminho e do nome especificado.
-
-    Args:
-        folder (int): O índice da pasta onde o programa está localizado.
-        name (str): O nome do arquivo .exe que será executado.
-        arguments (List[str]): Uma lista de argumentos que serão passados para o programa.
-        msi (bool): Se o arquivo é um MSI defina commo True para ser executado com msiexec.exe. Default é False.
-
-    Returns:
-        None
-
-    """
-    dir = ['0_Drivers', '1_Complementos', '2_Programas',
-           '3_Configuracoes', '4_Ativacao', '5_Finalizacao']
-
-    programPath = f'{dir[folder]}\\'
-    if subFolder != None:
-        programPath += f'{subFolder}\\'
-
-    if msi == True:
-        programPath += f'{name}.msi'
-        command = ['msiexec.exe', '/i', programPath, *arguments]
-    else:
-        programPath += f'{name}.exe'
-        command = [programPath, *arguments]
-
-    print(f'Instalando {name}...')
-    try:
-        install = run(command)
-    except FileNotFoundError:
-        print('ERRO! Arquivo não encontrado!')
-    except Exception as error:
-        print(error.__class__)
-    else:
-        if install.returncode != 0:
-            print(f'Erro ao instalar {name}')
-            print(install.returncode)
-        else:
-            print(f'{name} instalado com sucesso!\n')
+        return 1
 
 
 def createRegKey(keyDir: str, keyName: str, keyType: int, keyValue):
@@ -139,7 +99,7 @@ def validate_Version():
     SYSTEM_ARCHTECTURE = architecture()[0]
 
     print('Verificando compatibidade...\n')
-    print(f'Informações do Sistema Operacional:\n \
+    print(f'Informações do Sistema Operacional: \n \
           {SYSTEM_NAME} {SYSTEM_BUILD} {SYSTEM_ARCHTECTURE}')
 
     if SYSTEM_NAME not in 'Windows':

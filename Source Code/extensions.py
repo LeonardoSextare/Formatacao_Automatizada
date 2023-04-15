@@ -55,7 +55,7 @@ def install_CRuntime():
 
 
 def install_dotNet7():
-    start_executable('.Net 7', '1_Complementos\\.Net_7.0.4_Runtime.exe', ['/s'], msg=True)
+    program_install('.Net 7', '1_Complementos\\.Net_7.0.4_Runtime.exe', ['/s'], msg=True)
 
 def install_DirectX():
-    start_executable('Direct X', '1_Complementos\\DirectX\\DXSETUP.exe', ['/silent'], msg=True)
+    program_install('Direct X', '1_Complementos\\DirectX\\DXSETUP.exe', ['/silent'], msg=True)
