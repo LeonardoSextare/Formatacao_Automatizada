@@ -1,7 +1,7 @@
 from functions import *
 from extensions import *
 from programs import *
-from systemConfig import *
+from systemConfigs import *
 
 print(titulo('Auto Formatação by: Sextare'))
 
@@ -20,7 +20,7 @@ else:
 OFFICE_VERSION = officeSelection()
 
 # Defines if windows will be activated
-# winActivate = activateWindows()
+winActivate = activateWindows()
 
 
 print(titulo('Instalando Complementos'))
@@ -40,11 +40,12 @@ install_Anydesk()
 install_Winrar()
 install_Adobe()
 
-# print(titulo('Configurando o Sistema'))
-# if WIN_VERSION == '1709':
-#     configWindows1709()
-# else:
-#     print('Sistema Incopativel, etapa ignorada')
+print(titulo('Configurando o Sistema'))
+disableWindowsUpdate()
+if WIN_VERSION == '1709':
+    configWindows1709()
+else:
+    print('Versão do sistema não suportada, etapa ignorada')
 
 
 input('Pressione enter para sair...')

@@ -3,12 +3,9 @@ from functions import *
 
 
 def installChrome():
-    success = program_install('Google Chrome', '2_Programas\\Google Chrome\\Google Chrome.msi',
-                              ['/qn'], msg=True, msi=True)
-    if success:
-        set_Default = program_install(
-            'Navegador', '2_Programas\\Google Chrome\\SetDefaultBrowser.exe', ['chrome'])
-        if set_Default:
+    if program_install('Google Chrome', '2_Programas\\Google Chrome\\Google Chrome.msi', ['/qn'], msg=True, msi=True):
+
+        if program_install('Navegador', '2_Programas\\Google Chrome\\SetDefaultBrowser.exe', ['chrome']):
             print('Google Chrome definido como navegador padrão!\n')
 
 
@@ -23,12 +20,9 @@ def install_Anydesk():
 
 
 def install_Adobe():
-    success = program_install(
-        'Adobe Reader', '2_Programas\\Adobe Reader\\Adobe Reader.exe', [], msg=True)
-    if success:
-        set_Default = program_install('Leitor', '2_Programas\\Adobe Reader\\SetUserFTA.exe',
-                                      ['.pdf', 'AcroExch.Document.DC'])
-        if set_Default:
+    if program_install('Adobe Reader', '2_Programas\\Adobe Reader\\Adobe Reader.exe', [], msg=True):
+        
+        if program_install('Leitor', '2_Programas\\Adobe Reader\\SetUserFTA.exe', ['.pdf', 'AcroExch.Document.DC']):
             print('Adobe Reader definido como leitor padrão!\n')
 
 

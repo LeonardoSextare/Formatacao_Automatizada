@@ -32,8 +32,8 @@ def program_install(name: str, path: str, arguments: list[str], msg=False, msi=F
         print(f'ERRO! Arquivo não encontrado\n')
 
     except CalledProcessError as error:
-        print(
-            f'ERRO! Falha na execução do comando.\nCodigo:{error.returncode}\n')
+        print(f'ERRO! Falha na execução do comando.\n \
+        Codigo: {error.returncode}\n')
 
     except Exception as error:
         print(f'ERRO desconhecido! Tipo:{error.__class__}')
@@ -45,45 +45,49 @@ def program_install(name: str, path: str, arguments: list[str], msg=False, msi=F
         return 1
 
 
-def createRegKey(keyDir: str, keyName: str, keyType: int, keyValue):
-    """
-    Cria ou altera uma chave de registro do Windows com os valores
-    especificados.
-
-    Args:
-        keyDir (str): O caminho da chave de registro.
-        keyName (str): O nome da chave que deve ser criada ou alterada.
-        keyType (int): O tipo de valor da chave.
-                       0: REG_DWORD
-                       1: REG_SZ
-                       2: REG_BINARY
-                       3: REG_QWORD
-                       4: REG_MULTI_SZ
-                       5: REG_EXPAND_SZ
-        keyValue (str): O valor da chave que deve ser definido.
-
-    Returns:
-        None
-
-    """
-    validKeyTypes = ['REG_DWORD', 'REG_SZ', 'REG_BINARY',
-                     'REG_QWORD', 'REG_MULTI_SZ', 'REG_EXPAND_SZ']
-
-    if keyType < 0 or keyType >= len(validKeyTypes):
-        print(f'ERRO: tipo de chave inválido ({keyType})')
-        return
-
-    command = ['reg', 'add', f'"{str(keyDir)}"', '/v', str(keyName),
-               '/t', str(validKeyTypes[keyType]), '/d', str(keyValue), '/f']
+def create_RegKey(keyDir: str, keyName: str, keyType: str, keyValue):
+    command = ['reg', 'add', keyDir, '/v',
+               keyName, '/t', keyType, '/d', keyValue, '/f']
 
     try:
-        createKey = run(command)
+        run(command, check=True, stdout=DEVNULL, stderr=DEVNULL)
+
+    except CalledProcessError as error:
+        print('ERRO! Falha ao alterar o registro.\n')
+        print(f'Codigo:{error.returncode}\nChave: {keyName} Caminho: {keyDir} \n')
+
     except Exception as error:
-        print(f'ERRO! {error.__class__}')
+        print(f'ERRO desconhecido! Tipo:{error.__class__}')
+
     else:
-        if createKey.returncode != 0:
-            print(
-                f'Falha ao alterar o registro:\n Cod. {createKey.returncode}\nChave: {keyDir}, {keyName}')
+        return 1
+
+
+def extractZip(path: str, outputPath: str):
+    """
+    Extracts a compressed file to the specified directory.
+
+    Args:
+        path: Path to the compressed file to be extracted.
+        outputPath: Destination path where the contents of the file will be extracted.
+
+    Returns:
+        int: 1 if the operation was successful.
+    """
+    command = ['powershell', 'Expand-Archive', '-Path',
+               path, '-DestinationPath', outputPath, '-Force']
+
+    try:
+        run(command)
+
+    except FileNotFoundError:
+        print(f'ERRO! Arquivo zip não encontrado\n')
+
+    except CalledProcessError as error:
+        print(f'ERRO! Falha na execução do comando.\n \
+        Codigo: {error.returncode}\n')
+    else:
+        return 1
 
 
 def titulo(msg, tam=60):
@@ -92,15 +96,13 @@ def titulo(msg, tam=60):
 
 
 def validate_Version():
-    # System Requirements Compatible with Program
     SYSTEM_REQUERIMENTS = ['10.0.16299']
     SYSTEM_NAME = system()
     SYSTEM_BUILD = version()
     SYSTEM_ARCHTECTURE = architecture()[0]
 
-    print('Verificando compatibidade...\n')
-    print(f'Informações do Sistema Operacional: \n \
-          {SYSTEM_NAME} {SYSTEM_BUILD} {SYSTEM_ARCHTECTURE}')
+    print('Verificando compatibidade...\nInformações do Sistema Operacional:')
+    print(f'{SYSTEM_NAME} {SYSTEM_BUILD} {SYSTEM_ARCHTECTURE}\n')
 
     if SYSTEM_NAME not in 'Windows':
         print('Sistema Operacional não Suportado')
