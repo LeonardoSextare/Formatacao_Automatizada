@@ -41,7 +41,6 @@ install_Winrar()
 install_Adobe()
 
 print(titulo('Configurando o Sistema'))
-disableWindowsUpdate()
 if WIN_VERSION == '1709':
     configWindows1709()
 else:

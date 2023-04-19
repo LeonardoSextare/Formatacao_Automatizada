@@ -3,7 +3,7 @@ from functions import *
 
 
 def installChrome():
-    if program_install('Google Chrome', '2_Programas\\Google Chrome\\Google Chrome.msi', ['/qn'], msg=True, msi=True):
+    if program_install('Google Chrome', '2_Programas\\Google Chrome\\Google Chrome.msi', ['/qn'], msg=True):
 
         if program_install('Navegador', '2_Programas\\Google Chrome\\SetDefaultBrowser.exe', ['chrome']):
             print('Google Chrome definido como navegador padrão!\n')
@@ -11,7 +11,7 @@ def installChrome():
 
 def installFirefox():
     program_install('Firefox', '2_Programas\\Firefox.msi',
-                    ['/qn'], msg=True, msi=True)
+                    ['/qn'], msg=True)
 
 
 def install_Anydesk():
@@ -48,4 +48,4 @@ def installOffice(version):
 
 def install_JavaRuntime():
     program_install('Java 8', '1_Complementos\\Java_Runtime.msi',
-                    ['/qn', 'AUTO_UPDATE=Disable', 'NOSTARTMENU=Enable'], msg=True, msi=True)
+                    ['/qn', 'AUTO_UPDATE=Disable', 'NOSTARTMENU=Enable'], msg=True)

@@ -2,7 +2,7 @@ from platform import version, system, architecture
 from subprocess import *
 
 
-def program_install(name: str, path: str, arguments: list[str], msg=False, msi=False):
+def program_install(name: str, path: str, arguments: list[str], msg=False):
     """
     Installs a program from an executable or msi file.
 
@@ -15,10 +15,10 @@ def program_install(name: str, path: str, arguments: list[str], msg=False, msi=F
 
     Returns:
         int: Returns 1 if the installation was successful. Otherwise, returns None.
-    >>> program_install('Program Name', 'path\\program.msi', ['/qn'], msg=True, msi=True)
+    >>> program_install('Program Name', 'path\\program.msi', ['/qn'], msg=True 
     """
     command = [path, *arguments]
-    if msi:
+    if '.msi' in path[-4:]:
         command.insert(0, 'msiexec.exe')
         command.insert(1, '/i')
 
@@ -29,7 +29,7 @@ def program_install(name: str, path: str, arguments: list[str], msg=False, msi=F
         run(command, check=True)
 
     except FileNotFoundError:
-        print(f'ERRO! Arquivo não encontrado\n')
+        print('ERRO! Arquivo não encontrado\n')
 
     except CalledProcessError as error:
         print(f'ERRO! Falha na execução do comando.\n \
@@ -54,13 +54,14 @@ def create_RegKey(keyDir: str, keyName: str, keyType: str, keyValue):
 
     except CalledProcessError as error:
         print('ERRO! Falha ao alterar o registro.\n')
-        print(f'Codigo:{error.returncode}\nChave: {keyName} Caminho: {keyDir} \n')
+        print(
+            f'Codigo:{error.returncode}\nChave: {keyName} Caminho: {keyDir} \n')
 
     except Exception as error:
-        print(f'ERRO desconhecido! Tipo:{error.__class__}')
+        print(f'ERRO desconhecido! Tipo:{error.__class__}\n')
 
     else:
-        return 1
+        return True
 
 
 def extractZip(path: str, outputPath: str):
@@ -87,7 +88,7 @@ def extractZip(path: str, outputPath: str):
         print(f'ERRO! Falha na execução do comando.\n \
         Codigo: {error.returncode}\n')
     else:
-        return 1
+        return True
 
 
 def titulo(msg, tam=60):
@@ -165,3 +166,5 @@ def activateWindows():
                 return True
             elif escolha == 'n':
                 return False
+            
+
