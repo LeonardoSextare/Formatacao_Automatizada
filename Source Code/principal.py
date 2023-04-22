@@ -23,22 +23,22 @@ OFFICE_VERSION = officeSelection()
 winActivate = activateWindows()
 
 
-print(titulo('Instalando Complementos'))
-install_DotNet35(WIN_VERSION)
-install_CRuntime()
-install_dotNet7()
-install_JavaRuntime()
-install_DirectX()
+# print(titulo('Instalando Complementos'))
+# install_DotNet35(WIN_VERSION)
+# install_CRuntime()
+# install_dotNet7()
+# install_JavaRuntime()
+# install_DirectX()
 
 
 
-print(titulo('Instalando Programas'))
-installChrome()
-installFirefox()
-installOffice(OFFICE_VERSION)
-install_Anydesk()
-install_Winrar()
-install_Adobe()
+# print(titulo('Instalando Programas'))
+# installChrome()
+# installFirefox()
+# installOffice(OFFICE_VERSION)
+# install_Anydesk()
+# install_Winrar()
+# install_Adobe()
 
 print(titulo('Configurando o Sistema'))
 if WIN_VERSION == '1709':

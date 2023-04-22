@@ -129,7 +129,7 @@ def validate_Version():
 
 
 def officeSelection():
-    print('Selecione a versão do Office:')
+    print('Selecione a versão do Office a ser instalada:')
     print('[0] Nenhuma\n[1] Office 2013\n[2] Office 2016')
 
     while True:
