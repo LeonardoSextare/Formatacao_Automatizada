@@ -32,8 +32,8 @@ def program_install(name: str, path: str, arguments: list[str], msg=False):
         print('ERRO! Arquivo não encontrado\n')
 
     except CalledProcessError as error:
-        print(f'ERRO! Falha na execução do comando.\n \
-        Codigo: {error.returncode}\n')
+        print(f'ERRO! Falha na execução do comando.')
+        print(f'Codigo: {error.returncode}\n')
 
     except Exception as error:
         print(f'ERRO desconhecido! Tipo:{error.__class__}')
@@ -53,9 +53,8 @@ def create_RegKey(keyDir: str, keyName: str, keyType: str, keyValue):
         run(command, check=True, stdout=DEVNULL, stderr=DEVNULL)
 
     except CalledProcessError as error:
-        print('ERRO! Falha ao alterar o registro.\n')
-        print(
-            f'Codigo:{error.returncode}\nChave: {keyName} Caminho: {keyDir} \n')
+        print('ERRO! Falha ao alterar o registro.')
+        print(f'Codigo:{error.returncode}\nChave: {keyName} Caminho: {keyDir} \n')
 
     except Exception as error:
         print(f'ERRO desconhecido! Tipo:{error.__class__}\n')

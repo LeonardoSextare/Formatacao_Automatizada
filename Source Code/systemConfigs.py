@@ -14,6 +14,7 @@ def configWindows1709():
     regImport(1709) # Configures system by windows regkeys
     config_Powerplan()
     clean_StartMenuTiles()
+    disable_WinDefender()
     ...
 
 
@@ -23,6 +24,7 @@ def configWindows22H2():
     change_wallpaper()
     config_Powerplan()
     clean_StartMenuTiles()
+    disable_WinDefender()
     ...
 
 
@@ -198,6 +200,8 @@ def clean_StartMenuTiles():
             create_RegKey(f'{i}\SOFTWARE\Policies\Microsoft\Windows\Explorer', 'LockedStartLayout', 'REG_DWORD' , '1')
             create_RegKey(f'{i}\SOFTWARE\Policies\Microsoft\Windows\Explorer', 'StartLayoutFile', 'REG_SZ' , LAYOUT_FILE_PATH)
 
+
+        print
         for i in range(2):
             run(['taskkill', '/f', '/im', 'explorer.exe'], stdout=DEVNULL)
             sleep(2)
@@ -215,5 +219,73 @@ def clean_StartMenuTiles():
         print(f'ERRO desconhecido\nTipo: {error.__class__}\n')
     else:
         print('Tiles removidos com sucesso!\n')
-    
 
+
+def disable_WinDefender():
+    print('Desabilitando Windows Defender...')
+    try:
+        run(['reg', 'delete', 'HKLM\Software\Policies\Microsoft\Windows Defender', '/f'], stdout=DEVNULL)
+
+        for i in range(3):
+            #Disable Real-time protection
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender', 'AllowFastServiceStartup', 'REG_DWORD', '0')
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender', 'DisableAntiSpyware', 'REG_DWORD', '1')
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender', 'DisableAntiVirus', 'REG_DWORD', '1')
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender', 'DisableSpecialRunningModes', 'REG_DWORD', '1')
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender', 'ServiceKeepAlive', 'REG_DWORD', '0')
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender\MpEngine', 'MpEnablePus', 'REG_DWORD', '0')
+
+            create_RegKey('"HKLM\Software\Policies\Microsoft\Windows Defender\Real-Time Protection"', 'DisableBehaviorMonitoring', 'REG_DWORD', '1')
+            create_RegKey('"HKLM\Software\Policies\Microsoft\Windows Defender\Real-Time Protection"', 'DisableIOAVProtection', 'REG_DWORD', '1')
+            create_RegKey('"HKLM\Software\Policies\Microsoft\Windows Defender\Real-Time Protection"', 'DisableOnAccessProtection', 'REG_DWORD', '1')
+            create_RegKey('"HKLM\Software\Policies\Microsoft\Windows Defender\Real-Time Protection"', 'DisableRealtimeMonitoring', 'REG_DWORD', '1')
+            create_RegKey('"HKLM\Software\Policies\Microsoft\Windows Defender\Real-Time Protection"', 'DisableRoutinelyTakingAction', 'REG_DWORD', '1')
+            create_RegKey('"HKLM\Software\Policies\Microsoft\Windows Defender\Real-Time Protection"', 'DisableScanOnRealtimeEnable', 'REG_DWORD', '1')
+            create_RegKey('"HKLM\Software\Policies\Microsoft\Windows Defender\Real-Time Protection"', 'DisableRealtimeMonitoring', 'REG_DWORD', '1')
+
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender\Reporting', 'DisableEnhancedNotifications', 'REG_DWORD', '1')
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender\SpyNet', 'DisableBlockAtFirstSeen', 'REG_DWORD', '1')
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender\SpyNet', 'SpynetReporting', 'REG_DWORD', '0')
+            create_RegKey('HKLM\Software\Policies\Microsoft\Windows Defender\SpyNet', 'SubmitSamplesConsent', 'REG_DWORD', '2')
+
+            #Disable Logging
+            create_RegKey('HKLM\System\CurrentControlSet\Control\WMI\Autologger\DefenderApiLogger', 'Start', 'REG_DWORD', '0')
+            create_RegKey('HKLM\System\CurrentControlSet\Control\WMI\Autologger\DefenderApiLogger', 'Start', 'REG_DWORD', '0')
+
+            #Disable system tray icon
+            run(['reg', 'delete', 'HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run', '/v', 'SecurityHealth', '/f'], stdout=DEVNULL, stderr=DEVNULL )
+            run(['reg', 'delete', 'HKLM\Software\Microsoft\Windows\CurrentVersion\Run', '/v', 'SecurityHealth', '/f'], stdout=DEVNULL, stderr=DEVNULL)
+
+            # Removes context menu
+            run(['reg', 'delete', 'HKCR\*\shellex\ContextMenuHandlers\EPP', '/f'], stdout=DEVNULL, stderr=DEVNULL)
+            run(['reg', 'delete', 'HKCR\Directory\shellex\ContextMenuHandlers\EPP', '/f'], stdout=DEVNULL, stderr=DEVNULL)
+            run(['reg', 'delete', 'HKCR\Drive\shellex\ContextMenuHandlers\EPP',  '/f'], stdout=DEVNULL, stderr=DEVNULL)
+
+            #Disable Services
+            # create_RegKey('HKLM\SYSTEM\CurrentControlSet\Services\WdFilter', 'Start', 'REG_DWORD', '4')
+            # create_RegKey('HKLM\SYSTEM\CurrentControlSet\Services\WdNisDrv', 'Start', 'REG_DWORD', '4')
+            # create_RegKey('HKLM\SYSTEM\CurrentControlSet\Services\WdNisSvc', 'Start', 'REG_DWORD', '4')
+            # create_RegKey('HKLM\SYSTEM\CurrentControlSet\Services\WinDefend', 'Start', 'REG_DWORD', '4')
+
+            # Disable Tasks
+            run(['schtasks', '/Change', '/TN', 'Microsoft\\Windows\\Windows Defender\\Windows Defender Cache Maintenance', '/Disable'], stdout=DEVNULL, stderr=DEVNULL)
+            run(['schtasks', '/Change', '/TN', 'Microsoft\\Windows\\Windows Defender\\Windows Defender Cleanup', '/Disable'], stdout=DEVNULL, stderr=DEVNULL)
+            run(['schtasks', '/Change', '/TN', 'Microsoft\\Windows\\Windows Defender\\Windows Defender Scheduled Scan', '/Disable'], stdout=DEVNULL, stderr=DEVNULL)
+            run(['schtasks', '/Change', '/TN', 'Microsoft\\Windows\\Windows Defender\\Windows Defender Verification', '/Disable'], stdout=DEVNULL, stderr=DEVNULL)
+            
+        print('Windows Defender desabilitado com sucesso')
+
+    except Exception as error:
+        print('ERRO ' + error.__class__)
+
+
+def remove_Onedrive():
+    print('Desinstalando Onedrive...')
+
+    onedrive_Path = 'C:\\Windows\\SysWOW64\\OneDriveSetup.exe'
+    if not path.exists(onedrive_Path):
+        onedrive_Path = 'C:\\Windows\\System32\\OneDriveSetup.exe'
+    
+    ...
+
+    

@@ -20,7 +20,7 @@ else:
 OFFICE_VERSION = officeSelection()
 
 # Defines if windows will be activated
-winActivate = activateWindows()
+# winActivate = activateWindows()
 
 
 print(titulo('Instalando Complementos'))
